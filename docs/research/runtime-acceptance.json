@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17T14:41:29.010Z",
+  "platform": "darwin arm64",
+  "package_sha256": "b0ec5b166a5ed04d204f55b6c59cf812c1271dc0a05c33de1cd7bd46cf9ddad4",
+  "actions": [
+    "skills.read",
+    "save_project",
+    "put_segment",
+    "put_scene",
+    "put_signal",
+    "put_reader_view",
+    "put_finding",
+    "list_projects",
+    "get_source",
+    "get_operation",
+    "get_basis",
+    "build_analysis_context",
+    "create_handoff",
+    "get_coverage",
+    "get_structure",
+    "preview_update",
+    "remove_finding",
+    "remove_reader_view",
+    "remove_signal",
+    "remove_scene",
+    "remove_segment",
+    "compare_versions",
+    "export_project",
+    "get_project"
+  ],
+  "core_version": "0.11.5+local-cross-owner",
+  "source_build": true,
+  "directory": "/var/folders/87/s6cpr7hd1_v43cs833x4s_900000gn/T/hetu-story-analysis-lfpr66",
+  "cli_mcp": true,
+  "skill_resources": true,
+  "hotplug": true,
+  "uninstall_reinstall": true,
+  "candidate_fixed_ref": {
+    "kind": "document",
+    "work_ref": {
+      "workspace_id": "workspace_19ddc73f-b3d9-4b31-a8ef-bae3a9d947c2",
+      "kind": "novel",
+      "object_id": "novel_8be43835-980a-4122-afbe-76bbf6ae71d3"
+    },
+    "document_id": "doc_3e86242b-1d44-46b9-a3f7-89fd03a24acf",
+    "revision_id": "rev_a152dfd3-f911-4dc2-8d23-9cb2c616ce68",
+    "sha256": "16295785ca4f287dd11fc6f1d5884a64c51a26bc537868a7cb043c43a57ce6b5"
+  },
+  "handoff": {
+    "object_id": "ext_f897df36-d058-4238-aa4d-ae6ad5aaa874",
+    "owner_plugin_id": "org.wordflowlab.story-analysis",
+    "revision": 9,
+    "sha256": "55d7719cd23d8c8b6bb61fa61a70156d6378ab77b8229a654213519053f3e041"
+  },
+  "windows": false
+}

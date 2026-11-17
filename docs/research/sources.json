@@ -1,0 +1,93 @@
+{
+  "record_version": 1,
+  "date": "2026-11-17",
+  "scope": "固定源码研究；未执行上游安装、测试或模型调用；未复制上游业务代码。",
+  "references": [
+    {
+      "repository": "EthanYoQ/Pagekin",
+      "commit": "b370f9f5b2e3af1cef75910bd7f3339279f8eccf",
+      "url": "https://github.com/EthanYoQ/Pagekin/tree/b370f9f5b2e3af1cef75910bd7f3339279f8eccf",
+      "license": "GPL-3.0",
+      "inspected_files": [
+        {
+          "repository": "EthanYoQ/Pagekin",
+          "commit": "b370f9f5b2e3af1cef75910bd7f3339279f8eccf",
+          "path": "README.md",
+          "sha256": "80e6e218b82e7ae38b14f980ad6452ffb602ee08dde86c42f5eaf7ebd50a739d",
+          "bytes": 16342,
+          "url": "https://github.com/EthanYoQ/Pagekin/blob/b370f9f5b2e3af1cef75910bd7f3339279f8eccf/README.md",
+          "inspected_scope": "README相关功能段落；不是全部实现认证"
+        }
+      ]
+    },
+    {
+      "repository": "zenstory-ai/oh-story-dsh",
+      "commit": "0bb6c02a194592fd550cf0989243f10cdc2d0d48",
+      "url": "https://github.com/zenstory-ai/oh-story-dsh/tree/0bb6c02a194592fd550cf0989243f10cdc2d0d48",
+      "license": "MIT",
+      "inspected_files": [
+        {
+          "repository": "zenstory-ai/oh-story-dsh",
+          "commit": "0bb6c02a194592fd550cf0989243f10cdc2d0d48",
+          "path": "README.md",
+          "sha256": "acc88c48da829c7bcc32cbec2e2b8aa0790e5447a83887450f4a972188898376",
+          "bytes": 23618,
+          "url": "https://github.com/zenstory-ai/oh-story-dsh/blob/0bb6c02a194592fd550cf0989243f10cdc2d0d48/README.md",
+          "inspected_scope": "README相关功能段落；不是全部实现认证"
+        }
+      ]
+    },
+    {
+      "repository": "cong7781/novel",
+      "commit": "91d77fdfdad8367f23aaea820fe0d9e0260ad2d0",
+      "url": "https://github.com/cong7781/novel/tree/91d77fdfdad8367f23aaea820fe0d9e0260ad2d0",
+      "license": "MIT",
+      "inspected_files": [
+        {
+          "repository": "cong7781/novel",
+          "commit": "91d77fdfdad8367f23aaea820fe0d9e0260ad2d0",
+          "path": "README.md",
+          "sha256": "3a0d1fd21b81ed9d1c820ea0375b5072fc7faa36040906d8cd361b7706512228",
+          "bytes": 33611,
+          "url": "https://github.com/cong7781/novel/blob/91d77fdfdad8367f23aaea820fe0d9e0260ad2d0/README.md",
+          "inspected_scope": "README相关功能段落；不是全部实现认证"
+        },
+        {
+          "repository": "cong7781/novel",
+          "commit": "91d77fdfdad8367f23aaea820fe0d9e0260ad2d0",
+          "path": "lib/checkpoint.js",
+          "sha256": "93cc958578e9f92a5acb47314c1186f5403c97d814b80e85a2f7503c93d96e11",
+          "bytes": 3350,
+          "url": "https://github.com/cong7781/novel/blob/91d77fdfdad8367f23aaea820fe0d9e0260ad2d0/lib/checkpoint.js",
+          "inspected_scope": "定向源码／测试条目阅读，未执行"
+        },
+        {
+          "repository": "cong7781/novel",
+          "commit": "91d77fdfdad8367f23aaea820fe0d9e0260ad2d0",
+          "path": "lib/chunk.js",
+          "sha256": "d3f4f273418c606ee36207892b254ca1c126b3b48f2c8b90228f57914c6465bc",
+          "bytes": 5940,
+          "url": "https://github.com/cong7781/novel/blob/91d77fdfdad8367f23aaea820fe0d9e0260ad2d0/lib/chunk.js",
+          "inspected_scope": "定向源码／测试条目阅读，未执行"
+        }
+      ]
+    },
+    {
+      "repository": "ARKsealin/stylome",
+      "commit": "050033ee9a3318d49c40493979993cb54cce710f",
+      "url": "https://github.com/ARKsealin/stylome/tree/050033ee9a3318d49c40493979993cb54cce710f",
+      "license": "MIT",
+      "inspected_files": [
+        {
+          "repository": "ARKsealin/stylome",
+          "commit": "050033ee9a3318d49c40493979993cb54cce710f",
+          "path": "README.md",
+          "sha256": "ded7ef1ff7e1dff2b37530f61dbc8dce7af7990bc8545801075a10b853f425bf",
+          "bytes": 6638,
+          "url": "https://github.com/ARKsealin/stylome/blob/050033ee9a3318d49c40493979993cb54cce710f/README.md",
+          "inspected_scope": "README相关功能段落；不是全部实现认证"
+        }
+      ]
+    }
+  ]
+}

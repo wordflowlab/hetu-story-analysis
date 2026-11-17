@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-17T14:47:19.577Z",
+  "directory": "/var/folders/87/s6cpr7hd1_v43cs833x4s_900000gn/T/hetu-story-analysis-DuIAVl",
+  "source_build": true,
+  "upstream_packages": [
+    "org.wordflowlab.story-research",
+    "org.wordflowlab.character-lab",
+    "org.wordflowlab.novel-planner",
+    "org.wordflowlab.novel-review"
+  ],
+  "stages": [
+    "research",
+    "characters",
+    "analysis",
+    "book-volume-chapter",
+    "candidate",
+    "review",
+    "new-source-impact"
+  ],
+  "fixed_basis": [
+    {
+      "object_id": "ext_2428b4f4-5049-4142-9bf7-e0261a5dbb4c",
+      "owner_plugin_id": "org.wordflowlab.story-research",
+      "revision": 1,
+      "sha256": "2e22262818ab804f9502997e8db09d0bc71a590750635ee2162b72bc8256368e"
+    },
+    {
+      "object_id": "ext_c819dabd-3564-4281-95e8-c54fcbdc24e4",
+      "owner_plugin_id": "org.wordflowlab.character-lab",
+      "revision": 1,
+      "sha256": "cf6b97dee17de1cf4478ae6c4d271a297dc15e1bff24b399286140234b54bc4d"
+    },
+    {
+      "object_id": "ext_f4af01cb-849e-40a0-afad-21aac078c0ee",
+      "owner_plugin_id": "org.wordflowlab.story-analysis",
+      "revision": 1,
+      "sha256": "2b5db5c978c635f79b29b932ce5eb1932b20aa6e6c5d19f1729296355a95492c"
+    }
+  ],
+  "old_basis_survived_upstream_revision": true,
+  "adopted": false,
+  "finalized": false
+}
