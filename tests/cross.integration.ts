@@ -7,7 +7,7 @@ import { start } from "./support/machine.ts";
 import { original, scenario, selection, base } from "./support/scenario.ts";
 import { importText } from "./support/import.ts";
 import { candidate } from "./support/creative.ts";
-const root = path.resolve("..");
+const root = path.resolve(process.env.HETU_CROSS_ROOT ?? "..");
 test(
   "同一小说：研究→人物→分析→卷章规划→候选→审校→新稿影响",
   { timeout: 600000 },
@@ -242,12 +242,16 @@ test(
         ).submission,
       );
       await writeFile(
-        "docs/research/cross-plugin-acceptance.json",
+        path.join(process.env.HETU_RECEIPT_DIRECTORY ?? "docs/research", "cross-plugin-acceptance.json"),
         JSON.stringify(
           {
             date: new Date().toISOString(),
             directory: c.directory,
-            source_build: true,
+            source_build: !process.env.HETU_PACKAGED_APP,
+            core_version: c.coreVersion,
+            host_source_commit: process.env.HETU_TEST_HOST_COMMIT ?? null,
+            package_sha256: c.pkg.package_sha256,
+            upstream_package_shas: [research, characters, planner, review].map(p => ({ plugin_id: p.m.id, package_sha256: p.pkg.package_sha256 })),
             upstream_packages: [
               research.m.id,
               characters.m.id,

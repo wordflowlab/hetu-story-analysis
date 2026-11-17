@@ -75,6 +75,44 @@ jobs:
           HETU_TEST_PACKAGE: ${{ github.workspace }}/plugin/dist
           HETU_RECEIPT_DIRECTORY: ${{ github.workspace }}/plugin/output/acceptance
         run: npm run test:ui
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-story-research
+          ref: 1877ff6771cecfe96ab38318474a856005a97a73
+          path: peers/hetu-story-research
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-character-lab
+          ref: 6d7d3c8bd3653f98fe9338da420e8eea046a6e99
+          path: peers/hetu-character-lab
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-novel-planner
+          ref: 94cfe5fc91fc77529192ee2d61de7fdf012bb92a
+          path: peers/hetu-novel-planner
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-novel-review
+          ref: 78606f8405d43f7e3e8acb64a309330abc70013b
+          path: peers/hetu-novel-review
+          persist-credentials: false
+      - name: Build fixed ecosystem peers
+        run: |
+          for peer in peers/*; do
+            (cd "$peer" && npm ci && npm run build)
+          done
+      - name: Verify research to revised draft across five plugins
+        working-directory: plugin
+        env:
+          HETU_SOURCE: ${{ github.workspace }}/host
+          HETU_TEST_BIN: ${{ github.workspace }}/host/target/debug
+          HETU_TEST_PACKAGE: ${{ github.workspace }}/plugin/dist
+          HETU_CROSS_ROOT: ${{ github.workspace }}/peers
+          HETU_RECEIPT_DIRECTORY: ${{ github.workspace }}/plugin/output/acceptance
+        run: npm run test:cross
       - name: Retain package and receipts
         if: always()
         uses: actions/upload-artifact@v4
