@@ -1,0 +1,79 @@
+name: Published bundle acceptance
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: installed-acceptance-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  installed:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: acceptance
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: limecloud/hetu
+          ref: 3d929978419b8b230aee5fa2f9aed83614d4e2dd
+          path: host
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-story-research
+          ref: 2f8195cb7a20fa280cd7ead134f9d988fba23e48
+          path: plugins/hetu-story-research
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-character-lab
+          ref: 923482752db23cec279fced68d8ac7e3edfcb9b8
+          path: plugins/hetu-character-lab
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 2df3135f0ce67f256c648d17ddef27f53abd60c2
+          path: plugins/hetu-story-analysis
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-novel-planner
+          ref: 94cfe5fc91fc77529192ee2d61de7fdf012bb92a
+          path: plugins/hetu-novel-planner
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-novel-review
+          ref: 78606f8405d43f7e3e8acb64a309330abc70013b
+          path: plugins/hetu-novel-review
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '25.0.0'
+      - name: Install test dependencies without building host or packages
+        run: |
+          (cd host && npm ci --ignore-scripts)
+          for plugin in plugins/*; do
+            (cd "$plugin" && npm ci --ignore-scripts)
+          done
+      - name: Verify official installation and all published plugins
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 acceptance/scripts/accept-installed.py
+      - name: Retain installed acceptance and actual work surfaces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-installed-acceptance
+          path: |
+            installed-acceptance/
+            plugins/*/test-results/
+          if-no-files-found: error
+          retention-days: 30
