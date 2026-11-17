@@ -63,6 +63,9 @@ jobs:
           for plugin in plugins/*; do
             (cd "$plugin" && npm ci --ignore-scripts)
           done
+      - name: Generate peer test validation from fixed contract
+        working-directory: plugins/hetu-novel-review
+        run: node scripts/generate-validators.mjs
       - name: Verify official installation and all published plugins
         env:
           GH_TOKEN: ${{ github.token }}
